@@ -28,7 +28,7 @@ export const NoteSelector = () => {
 
   const compactBlock = useMemo(() => (
     <div className={styles.scale}>
-      {mainNote?.note} {selectedScales[0].name}
+      {mainNote?.note} {selectedScales[0]?.name}
     </div>
   ), [selectedScales, mainNote])
 
