@@ -1,0 +1,44 @@
+.wrapper {
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+  gap: 4px;
+}
+
+.scaleBtn {
+  position: relative;
+  flex-grow: 1;
+  padding: 5px 10px;
+  color: rgb(var(--text-color));
+  text-transform: capitalize;
+  background-color: gray;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.1s;
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    bottom: -2px;
+    left: -2px;
+  }
+
+  &:hover {
+    background-color: rgba(var(--primary-color), 0.5);
+  }
+
+  &.active {
+    background-color: rgb(var(--primary-color));
+  }
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+    padding: 2px 5px;
+  }
+}

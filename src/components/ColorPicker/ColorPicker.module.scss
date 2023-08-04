@@ -1,0 +1,26 @@
+.picker {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 26px;
+  height: 26px;
+  background-color: rgb(var(--primary-color));
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 0 0 0 auto;
+
+  input {
+    position: absolute;
+    visibility: hidden;
+  }
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: rgb(var(--text-color));
+  font-weight: 700;
+}

@@ -1,0 +1,32 @@
+.wrapper {
+  background: #ffffff;
+  border-radius: 10px;
+  display: flex;
+  gap: 5px;
+  padding: 5px;
+  flex-grow: 1;
+}
+
+.note {
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: gray;
+  border-radius: 50%;
+  color: rgb(var(--text-color));
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.1s;
+  font-size: 14px;
+
+  &:hover {
+    background-color: rgba(var(--primary-color), 0.5);
+  }
+
+  &.active {
+    background-color: rgb(var(--primary-color));
+  }
+}

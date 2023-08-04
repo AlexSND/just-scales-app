@@ -1,0 +1,63 @@
+.wrapper {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  display: flex;
+  gap: 4px;
+  border-radius: 10px;
+  overflow: hidden;
+
+  &.compact {
+    height: 150px;
+
+    .note {
+      cursor: default;
+    }
+  }
+}
+
+.note {
+  width: 14.28%;
+  height: 100%;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background: #ffffff;
+  cursor: pointer;
+
+  &[class*='sharp'] {
+    width: 7%;
+    height: 60%;
+    position: absolute;
+    background: #000000;
+    border: 4px solid #000000;
+    border-top: none;
+  }
+
+  &.c-sharp {
+    left: 9%;
+  }
+
+  &.d-sharp {
+    left: 26%;
+  }
+
+  &.f-sharp {
+    left: 51%;
+  }
+
+  &.f-sharp {
+    left: 52%;
+  }
+
+  &.g-sharp {
+    left: 68%;
+  }
+
+  &.a-sharp {
+    left: 84%;
+  }
+
+  &.active {
+    background-color: rgb(var(--primary-color));
+  }
+}
