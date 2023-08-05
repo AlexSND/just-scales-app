@@ -1,16 +1,10 @@
-.wrapper {
+.compactBtn {
   background: #ffffff;
   border-radius: 5px;
-  min-width: 35px;
+  width: 35px;
   height: 35px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.compactBtn {
-  width: 20px;
-  height: 20px;
+  cursor: pointer;
+  padding: 8px;
 
   &.disabled {
     opacity: 0.5;
