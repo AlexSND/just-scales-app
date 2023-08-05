@@ -4,7 +4,7 @@ import {Config} from '../Config/Config';
 
 export const Header = () => {
   return (
-    <header className={styles.header}>
+    <header data-tauri-drag-region className={styles.header}>
       <NoteSelector/>
       <Config/>
     </header>

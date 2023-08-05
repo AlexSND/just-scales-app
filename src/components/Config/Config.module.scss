@@ -1,10 +1,11 @@
 .wrapper {
   background: #ffffff;
-  border-radius: 10px;
+  border-radius: 5px;
+  min-width: 35px;
+  height: 35px;
   display: flex;
   align-items: center;
-  gap: 5px;
-  padding: 5px;
+  justify-content: center;
 }
 
 .compactBtn {
@@ -15,5 +16,9 @@
     opacity: 0.5;
     cursor: not-allowed;
     pointer-events: none;
+  }
+
+  svg {
+    display: block;
   }
 }

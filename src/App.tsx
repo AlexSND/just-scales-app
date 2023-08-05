@@ -1,5 +1,5 @@
 import {LogicalSize, appWindow} from '@tauri-apps/api/window';
-import {useCallback, useEffect, useRef} from 'react'
+import {useCallback, useEffect} from 'react'
 import {Header} from './components/Header/Header'
 import {Keyboard} from './components/Keyboard/Keyboard'
 import {ScaleSelector} from './components/ScaleSelector/ScaleSelector'
@@ -9,15 +9,14 @@ import {IForNoteScale} from './shared/interfaces/forNoteScale'
 import {SCALES} from './shared/const/scales'
 import {useDispatch, useSelector} from 'react-redux'
 import {setScales} from './app.slice'
-import {RootState, store} from './store'
+import {RootState} from './store'
 import {KEYS} from './shared/const/keys'
-import {APP_WIDTH, APP_WIDTH_COMPACT} from './shared/const/app';
+import {APP_HEIGHT, APP_HEIGHT_COMPACT, APP_WIDTH, APP_WIDTH_COMPACT} from './shared/const/app';
 
 function App() {
   const scales = useSelector((state: RootState) => state.app.scales);
+  const compactView = useSelector((state: RootState) => state.app.compactView);
   const dispatch = useDispatch();
-  const mainRef = useRef<HTMLDivElement | null>(null)
-  const resizeObserverRef = useRef<ResizeObserver | null>(null)
 
   const convertScales = useCallback((scales: IScale[], keys: IKey[]): IForNoteScale[] => {
     const convertedScales: IForNoteScale[] = [];
@@ -53,35 +52,20 @@ function App() {
     return convertedScales;
   }, [])
 
-  const setAppWindowSize = (entries: ResizeObserverEntry[]) => {
-    const rect = entries[0].contentRect;
-    // TODO: set height without hard appbar height
-    if (rect) {
-      const isCompact = store.getState().app.compactView;
-      appWindow.setSize(new LogicalSize(isCompact ? APP_WIDTH_COMPACT : APP_WIDTH, rect.height + 60));
-      appWindow.setAlwaysOnTop(isCompact);
-    }
-  }
+  useEffect(() => {
+    appWindow.setSize(new LogicalSize(
+      compactView ? APP_WIDTH_COMPACT : APP_WIDTH,
+      compactView ? APP_HEIGHT_COMPACT : APP_HEIGHT
+    ));
+    appWindow.setAlwaysOnTop(compactView);
+  }, [compactView]);
 
   useEffect(() => {
     dispatch(setScales(convertScales(SCALES, KEYS)));
   }, [convertScales, dispatch])
 
-  useEffect(() => {
-    if (mainRef.current && !resizeObserverRef.current) {
-      resizeObserverRef.current = new ResizeObserver((entries) => setAppWindowSize(entries));
-      resizeObserverRef.current.observe(mainRef.current);
-    }
-
-    () => {
-      if (mainRef.current) {
-        resizeObserverRef.current?.disconnect()
-      }
-    }
-  }, [mainRef.current])
-
   return scales.length ? (
-    <div ref={mainRef} className='main'>
+    <div className='main'>
       <Header/>
       <ScaleSelector/>
       <Keyboard/>

@@ -1,6 +1,6 @@
 .wrapper {
   background: #ffffff;
-  border-radius: 10px;
+  border-radius: 5px;
   display: flex;
   gap: 5px;
   padding: 5px;
@@ -13,9 +13,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: gray;
+  background-color: rgb(var(--button-bg));
   border-radius: 50%;
-  color: rgb(var(--text-color));
+  color: rgb(var(--button-text-color));
   font-weight: 600;
   cursor: pointer;
   user-select: none;
@@ -23,7 +23,7 @@
   font-size: 14px;
 
   &:hover {
-    background-color: rgba(var(--primary-color), 0.5);
+    background-color: rgb(var(--primary-color-hover));
   }
 
   &.active {
