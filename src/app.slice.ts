@@ -61,6 +61,10 @@ export const appSlice = createSlice({
     },
 
     selectMainNote: (state, action: PayloadAction<IKey>) => {
+      if (!state.selectedKeyboardKeys.length) {
+        state.scaleDetection = false;
+      }
+
       state.mainNote = action.payload;
 
       if (state.scaleDetection) {
