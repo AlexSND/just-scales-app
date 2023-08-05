@@ -7,9 +7,12 @@
   padding: 8px;
 
   &.disabled {
-    opacity: 0.5;
     cursor: not-allowed;
     pointer-events: none;
+
+    svg {
+      opacity: 0.5;
+    }
   }
 
   svg {
