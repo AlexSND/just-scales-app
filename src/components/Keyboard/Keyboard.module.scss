@@ -58,6 +58,6 @@
   }
 
   &.active {
-    background-color: rgb(var(--primary-color));
+    background-color: var(--primary-color);
   }
 }

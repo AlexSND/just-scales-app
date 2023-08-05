@@ -1,8 +1,8 @@
 :root {
-  --primary-color: 112, 212, 255;
-  --primary-color-hover: 112, 212, 255;
-  --button-bg: 131,137,150;
-  --button-text-color: 255, 255, 255;
+  --primary-color: rgb(66, 176, 223);
+  --primary-color-hover: rgb(48, 154, 200);
+  --button-bg: rgb(131,137,150);
+  --button-text-color: rgb(255, 255, 255);
 }
 
 @font-face {
