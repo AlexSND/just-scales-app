@@ -27,9 +27,9 @@ export const NoteSelector = () => {
   ), [onKeySelect, mainNote]);
 
   const compactBlock = useMemo(() => (
-    <div className={styles.scale}>
+    <span className={styles.scale}>
       {mainNote?.note} {selectedScales[0]?.name}
-    </div>
+    </span>
   ), [selectedScales, mainNote])
 
   return (

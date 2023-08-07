@@ -1,10 +1,17 @@
-.compactBtn {
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: 4px;
   background: #ffffff;
   border-radius: 5px;
-  width: 35px;
+  overflow: hidden;
   height: 35px;
-  cursor: pointer;
-  padding: 8px;
+  padding: 5px;
+}
+
+.compactBtn {
+  width: 22px;
+  height: 22px;
 
   &.disabled {
     cursor: not-allowed;
@@ -18,4 +25,8 @@
   svg {
     display: block;
   }
+}
+
+.configBtn {
+  cursor: pointer;
 }

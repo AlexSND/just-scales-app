@@ -5,6 +5,7 @@
   gap: 5px;
   padding: 5px;
   flex-grow: 1;
+  user-select: none;
 }
 
 .note {
@@ -18,12 +19,11 @@
   color: var(--button-text-color);
   font-weight: 600;
   cursor: pointer;
-  user-select: none;
-  transition: background-color 0.1s;
   font-size: 14px;
+  text-shadow: 0 0 2px #000000;
 
   &:hover {
-    background-color: var(--primary-color-hover);
+    background-color: var(--button-bg-hover);
   }
 
   &.active {
