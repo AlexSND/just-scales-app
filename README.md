@@ -1,8 +1,7 @@
 # Just scales
 
-[Download mac](https://github.com/AlexSND/just-scales-app/releases/download/app-v1.0.0/just-scales_1.0.0_x64.dmg)</br>
-[Download win](https://github.com/AlexSND/just-scales-app/releases/download/app-v1.0.0/just-scales_1.0.0_x64-setup.exe)
-
+[Download mac](https://github.com/AlexSND/just-scales-app/releases/download/just-scales-v1.1.0/just-scales_1.1.0_x64.dmg)</br>
+[Download win](https://github.com/AlexSND/just-scales-app/releases/download/just-scales-v1.1.0/just-scales_1.1.0_x64-setup.exe)
 
 ## Normal view
 <img width="547" alt="image" src="https://github.com/AlexSND/just-scales-app/assets/6266205/d9493649-5edf-4094-8d7d-6706b60fe378">
