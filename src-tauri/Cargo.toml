@@ -1,6 +1,6 @@
 [package]
 name = "Just-scales"
-version = "1.0.0"
+version = "1.1.0"
 description = "App for learning scales"
 authors = ["you"]
 license = ""
